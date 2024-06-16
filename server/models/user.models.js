@@ -21,17 +21,22 @@ const userSchema = new mongoose.Schema(
 			required: true,
 			unique: true,
 		},
+		address: {
+			type: String,
+            required: true,
+            default: "",
+		},
         orders: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: "Product",
+                ref: "Order",
                 default: [],
             }
         ],
         cart: [
             {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: "Product",
+                ref: "Cart",
                 default: [],
             }
         ],
