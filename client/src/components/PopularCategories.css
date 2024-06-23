@@ -1,0 +1,35 @@
+.popular-category-section{
+    margin-bottom: 10vh;
+}
+
+.categories-container{
+    width: 100%;
+    display: flex;
+    column-gap: 2vw;
+}
+
+.categories-boxes{
+    width: 13.333vw;
+    height: 13.333vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    row-gap: 2vh;
+    border: 2px solid #B2B2B2;
+    font-weight: 300;
+
+    span{
+        font-size: 1.5rem;
+    }
+}
+.categories-boxes:hover {
+    background-color: #db4444;
+    color: #fff;
+    border: none;
+  }
+  
+.icons{
+    font-size: 3rem;
+}

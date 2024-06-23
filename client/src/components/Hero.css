@@ -1,0 +1,27 @@
+.hero-container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10vh;
+}
+
+.category-container{
+    padding-right: 10vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    color: black;
+    border-right: 1px solid #B2B2B2;
+}
+
+.category-links{
+    color: black;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+}
+
+.carousel-container{
+    width: 60vw;
+}
