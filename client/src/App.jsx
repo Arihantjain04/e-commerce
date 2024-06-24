@@ -23,6 +23,8 @@ import UpdateMiddlePage from "./pages/Admin/UpdateMiddlePage.jsx";
 import DeleteMiddlePage from "./pages/Admin/DeleteMiddlePage.jsx";
 import DeleteProduct from "./pages/Admin/DeleteProduct.jsx";
 import WishlistMiddlePage from "./pages/WishlistMiddlePage.jsx";
+import CartMiddlePage from "./pages/Admin/CartMiddlePage.jsx";
+import DeleteCartMiddlePage from "./pages/Admin/DeleteCartMiddlePage.jsx";
 
 const App = () => {
   return (
@@ -32,6 +34,8 @@ const App = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/cart" element={<Cart/>}/>
+        <Route path="/cart/:pid" element={<CartMiddlePage/>}/>
+        <Route path="/removecart/:pid" element={<DeleteCartMiddlePage/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/logout" element={<Logout/>}/>
         <Route path="/myaccount" element={<MyProfile/>}/>

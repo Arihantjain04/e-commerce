@@ -4,7 +4,6 @@ import Cart from '../models/Cart.models.js'
 
 export const addProductToCart = async (req, res) => {
     try {
-  
       const { userid, productId } = req.params;
   
       const user = await User.findById(userid);
@@ -17,19 +16,24 @@ export const addProductToCart = async (req, res) => {
       let cart = await Cart.findOne({ user: userid });
   
       if (!cart) {
-        cart = new Cart({ user: userid, items: [{ product: productId, quantity: 1 }] });
+        cart = new Cart({
+          user: userid,
+          items: [{ product: productId, quantity: 1, salePrice: product.salePrice }]
+        });
       } else {
-        const existingProductIndex = cart.items.findIndex(item => item.product && item.product.toString() === productId);        if (existingProductIndex !== -1) {
+        const existingProductIndex = cart.items.findIndex(item => item.product && item.product.toString() === productId);
+  
+        if (existingProductIndex !== -1) {
           cart.items[existingProductIndex].quantity += 1;
         } else {
-          cart.items.push({ product: productId, quantity: 1 });
+          cart.items.push({ product: productId, quantity: 1, salePrice: product.salePrice });
         }
       }
   
       await cart.save();
       res.status(200).json({ message: "Product added to Cart", cart });
     } catch (error) {
-      console.error("Error in addProductToWishlist controller:", error.message);
+      console.error("Error in addProductToCart controller:", error.message);
       res.status(500).json({ error: "Internal Server Error: " + error.message });
     }
   };
