@@ -21,7 +21,7 @@ const Home = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/product/getAllProducts",
+          "https://e-commerce-tkjz.onrender.com/api/product/getAllProducts",
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },
