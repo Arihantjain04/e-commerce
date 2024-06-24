@@ -11,7 +11,7 @@ const Login = () => {
     password: "",
   });
   const navigate = useNavigate();
-  const {storeTokenInLs} = useAuth()
+  const {storeTokenInLs, setIsAdmin, setUserid} = useAuth()
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -38,6 +38,13 @@ const Login = () => {
         console.error("Login error:", errorData);
       } else {
         const data = await response.json();
+        console.log(data)
+        if(data.isAdmin){
+          setIsAdmin(true)
+          localStorage.setItem("isAdmin", 'true');
+        }
+        setUserid(data._id)
+        localStorage.setItem("userid", data._id.toString());
         console.log("Login successful:", data);
         toast('Login Successfull !!!', {
           icon: '👏'},

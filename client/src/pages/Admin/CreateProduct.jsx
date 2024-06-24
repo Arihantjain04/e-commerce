@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Admin.css";
 import {Toaster, toast} from 'react-hot-toast'
+import AdminNavbar from "./AdminNavbar";
 
 const CreateProduct = () => {
   const [product, setProduct] = useState({
@@ -62,7 +63,7 @@ const CreateProduct = () => {
         console.error("Error in Product creating:", errorData);
       } else {
         const data = await response.json();
-        toast.success('Product Creayed Successfully !!!');
+        toast.success('Product Created Successfully !!!');
         console.log("Product Created Successfully:", data);
 
 
@@ -85,6 +86,8 @@ const CreateProduct = () => {
     position="bottom-left"
     reverseOrder={false}
   />
+  <div className="admin-containers">
+    <AdminNavbar/>
     <div className="create-product">
       <h1>Create Product</h1>
       <form onSubmit={handleSubmit} className="create-product-form" encType="multipart/form-data">
@@ -179,6 +182,7 @@ const CreateProduct = () => {
 
         <button type="submit">Create Product</button>
       </form>
+    </div>
     </div>
     </>
   );

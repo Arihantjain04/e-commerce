@@ -15,6 +15,14 @@ import WishList from "./pages/WishList.jsx";
 import Footer from "./components/Footer.jsx";
 import CreateProduct from './pages/Admin/CreateProduct.jsx'
 import UpdateProduct from "./pages/Admin/UpdateProduct.jsx";
+import SingleProduct from "./pages/SingleProduct.jsx";
+import Category from "./pages/Category.jsx";
+import Type from "./pages/Type.jsx";
+import Admin from "./pages/Admin/Admin.jsx";
+import UpdateMiddlePage from "./pages/Admin/UpdateMiddlePage.jsx";
+import DeleteMiddlePage from "./pages/Admin/DeleteMiddlePage.jsx";
+import DeleteProduct from "./pages/Admin/DeleteProduct.jsx";
+import WishlistMiddlePage from "./pages/WishlistMiddlePage.jsx";
 
 const App = () => {
   return (
@@ -29,9 +37,17 @@ const App = () => {
         <Route path="/myaccount" element={<MyProfile/>}/>
         <Route path="/signup" element={<Signup/>}/>
         <Route path="/wishlist" element={<WishList/>}/>
+        <Route path="/wishlist/middle" element={<WishlistMiddlePage/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/admin/createProduct" element={<CreateProduct />}/>
+        <Route path="/admin" element={<Admin />}/>
         <Route path="/admin/updateProduct/:id" element={<UpdateProduct />}/>
+        <Route path="/admin/updateProduct" element={<UpdateMiddlePage />}/>
+        <Route path="/admin/deleteProduct" element={<DeleteMiddlePage />}/>
+        <Route path="/admin/deleteProduct/:id" element={<DeleteProduct/>}/>
+        <Route path="/product/:id" element={<SingleProduct />}/>
+        <Route path="/category/:category" element={<Category/>}/>
+        <Route path="/typeofproduct/:type" element={<Type/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

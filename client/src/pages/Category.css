@@ -1,0 +1,12 @@
+.category-containers{
+    padding-top: 0 !important;
+    padding: 5vw;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+  }
+
+  .category-headings{
+    margin: 2vh 5vw;
+  }

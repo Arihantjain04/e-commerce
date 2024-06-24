@@ -14,7 +14,7 @@ import "./Navbar.css";
 import { useAuth } from "../security/Auth.jsx";
 
 const Navbar = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn, isAdmin } = useAuth();
 
   const [showOptions, setShowOptions] = useState(false);
   const toggleCart = () => {
@@ -50,6 +50,11 @@ const Navbar = () => {
           <NavLink className={getNavLinkClass} to="/about">
             About
           </NavLink>
+          {isLoggedIn && isAdmin &&
+            <NavLink className="navLinksLi" to="/admin">
+            Admin
+          </NavLink>
+          }
           {!isLoggedIn && (
             <>
               <NavLink className="navLinksLi" to="/login">

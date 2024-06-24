@@ -14,8 +14,9 @@ const AllProducts = (props) => {
       <div className="cards-container">
         {props.products.length > 0 ? (
           props.products.map((product) => (
-            <ProductSmall
+            product._id&&<ProductSmall
               key={product._id}
+              pid={product._id}
               productName={product.productName}
               salePrice={product.salePrice}
               originalPrice={product.originalPrice}

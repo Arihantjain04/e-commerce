@@ -1,18 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { useAuth } from '../security/Auth';
-import ProductSmall from '../components/ProductSmall';
-import '../styles/Home.css'
-import WishlistProductSmall from '../components/WishlistProductSmall';
-import '../styles/Home.css'
+import React, { useEffect, useState } from "react";
+import ProductSmall from "../../components/ProductSmall";
+import AdminProductSmall from "../../components/AdminProductSmall";
+import AdminNavbar from "./AdminNavbar";
 
-const WishList = () => {
+const UpdateMiddlePage = () => {
   const [products, setProducts] = useState([]);
-  const userid = localStorage.getItem("userid").toString()
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/product/wishlist/${userid}`,
+          "http://localhost:8000/api/product/getAllProducts",
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },
@@ -24,9 +22,10 @@ const WishList = () => {
         }
 
         const data = await response.json();
-        console.log("API response data:", data); 
+        console.log("API response data:", data); // Log the response to understand its structure
 
-        setProducts(data.products);
+        // Set products directly from the response data
+        setProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -36,17 +35,14 @@ const WishList = () => {
   }, []);
   return (
     <>
-    <div className="wishlist-section">
-      <div className="sale-heading">
-        <h2>My Wishlist</h2>
-      </div>
-      <div className="wishlist-container-arrow">
-        <div className="wishlist-products-container">
-        {products.length > 0 ? (
+      <div className="admin-containers">
+        <AdminNavbar />
+        <div className="update-cards-container">
+          {products.length > 0 ? (
             products.map(
               (product) =>
                 product._id && (
-                  <WishlistProductSmall
+                  <AdminProductSmall
                     key={product._id}
                     pid={product._id}
                     task={'updateProduct'}
@@ -58,13 +54,12 @@ const WishList = () => {
                 )
             )
           ) : (
-            <p>No products in your wishlist</p>
+            <p>No products available</p>
           )}
         </div>
       </div>
-    </div>
     </>
-  )
-}
+  );
+};
 
-export default WishList
+export default UpdateMiddlePage;

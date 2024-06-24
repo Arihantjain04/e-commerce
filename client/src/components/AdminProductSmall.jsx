@@ -2,9 +2,9 @@ import React from 'react'
 import "./ProductSmall.css";
 import { NavLink } from 'react-router-dom';
 
-const ProductSmall = (props) => {
+const AdminProductSmall = (props) => {
   return (
-    <NavLink to={`/product/${props.pid}`} style={{color: 'black'}}><div className='productSmallContainer'>
+    <NavLink to={`/admin/${props.task}/${props.pid}`} style={{color: 'black'}}><div className='productSmallContainer'>
     <div className="imgDiv">
         <img src={`${props.imgSrc}`} alt="" />
     </div>
@@ -18,4 +18,4 @@ const ProductSmall = (props) => {
   )
 }
 
-export default ProductSmall
+export default AdminProductSmall

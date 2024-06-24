@@ -162,3 +162,25 @@ export const getAllProducts = async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
+
+export const getAllProductsByCategory = async (req, res) => {
+  try {
+    const {category} = req.params
+    const products = await Product.find({categoryName: category}); // Find all products in the collection
+    res.status(200).json(products);
+  } catch (error) {
+    console.error("Error in getAllProductsByCategory controller:", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
+export const getAllProductsByType = async (req, res) => {
+  try {
+    const {type} = req.params
+    const products = await Product.find({typeOfProduct: type}); // Find all products in the collection
+    res.status(200).json(products);
+  } catch (error) {
+    console.error("Error in getAllProducts controller:", error.message);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};

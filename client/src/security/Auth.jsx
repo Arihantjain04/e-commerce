@@ -6,6 +6,8 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem("jsonWebToken"));
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("jsonWebToken"));
+  const [isAdmin, setIsAdmin] = useState(localStorage.getItem("isAdmin") === "true");
+  const [userid, setUserid] = useState(localStorage.getItem("userid") || "");
 
   const storeTokenInLs = (serverToken) => {
     setToken(localStorage.getItem("jsonWebToken"));
@@ -30,6 +32,10 @@ export const AuthProvider = ({ children }) => {
         storeTokenInLs(data.token);
         console.log("Logout successful:", data);
         setIsLoggedIn(false);
+        setIsAdmin(false)
+        setUserid('')
+        localStorage.removeItem("isAdmin");
+        localStorage.removeItem("userid");
         return localStorage.removeItem("jsonWebToken");
       }
     } catch (error) {
@@ -38,7 +44,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ storeTokenInLs, logout, isLoggedIn }}>
+    <AuthContext.Provider value={{ storeTokenInLs, logout, isLoggedIn ,isAdmin, setIsAdmin, setUserid, userid }}>
       {children}
     </AuthContext.Provider>
   );

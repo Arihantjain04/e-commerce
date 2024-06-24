@@ -98,6 +98,7 @@ const SaleSection = () => {
           {visibleCards.map((product) => (
             <ProductSmall
               key={product._id}
+              pid={product._id}
               productName={product.productName}
               salePrice={(product.salePrice * 0.8).toFixed(2)}
               originalPrice={product.originalPrice}

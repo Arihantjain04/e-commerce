@@ -21,7 +21,7 @@ const Featured = () => {
           <div className="contentsofarrival">
             <h3>PlayStation 5</h3>
             <p>Black and White version of the PS5 coming out on sale.</p>
-            <NavLink className="arrivalsbtns">Shop Now</NavLink>
+            <NavLink to='typeofproduct/gaming' className="arrivalsbtns">Shop Now</NavLink>
           </div>
         </div>
         <div className="item1">
@@ -29,7 +29,7 @@ const Featured = () => {
           <div className="contentsofarrival">
             <h3>Women's Collections</h3>
             <p>Featured woman collections that give you another vibe.</p>
-            <NavLink className="arrivalsbtns">Shop Now</NavLink>
+            <NavLink to='category/womansfashion' className="arrivalsbtns">Shop Now</NavLink>
           </div>
         </div>
         <div className="item3">
@@ -37,7 +37,7 @@ const Featured = () => {
           <div className="contentsofarrival">
             <h3>Speakers</h3>
             <p>Amazon wireless speakers</p>
-            <NavLink className="arrivalsbtns">Shop Now</NavLink>
+            <NavLink to='typeofproduct/speakers' className="arrivalsbtns">Shop Now</NavLink>
           </div>
         </div>
         <div className="item4">
@@ -45,7 +45,7 @@ const Featured = () => {
           <div className="contentsofarrival">
             <h3>Perfume</h3>
             <p>GUCCI INTENSE OUD EDP</p>
-            <NavLink className="arrivalsbtns">Shop Now</NavLink>
+            <NavLink to='typeofproduct/perfumes' className="arrivalsbtns">Shop Now</NavLink>
           </div>
         </div>
       </div>

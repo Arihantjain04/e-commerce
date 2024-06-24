@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./Admin.css";
 import { Toaster, toast } from "react-hot-toast";
+import AdminNavbar from "./AdminNavbar";
 
 const UpdateProduct = () => {
   const { id } = useParams();
@@ -93,6 +94,8 @@ const UpdateProduct = () => {
   return (
     <>
       <Toaster position="bottom-left" reverseOrder={false} />
+      <div className="admin-containers">
+    <AdminNavbar/>
       <div className="create-product">
         <h1>Update Product</h1>
         <form
@@ -178,6 +181,7 @@ const UpdateProduct = () => {
 
           <button type="submit">Update Product</button>
         </form>
+      </div>
       </div>
     </>
   );

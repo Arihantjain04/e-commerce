@@ -78,16 +78,18 @@ export const login = async (req, res) => {
     if (isPasswordCorrect) {
       const token = generateTokenAndSetCookie(user._id, res);
 
-      res.status(200).json({
-        _id: user._id,
-        fullName: user.fullName,
-        username: user.username,
-        email: user.email,
-        address: user.address,
-        cart: user.cart,
-        orders: user.orders,
-        token,
-      });
+      // res.status(200).json({
+      //   _id: user._id,
+      //   fullName: user.fullName,
+      //   username: user.username,
+      //   email: user.email,
+      //   address: user.address,
+      //   cart: user.cart,
+      //   orders: user.orders,
+      //   token,
+      // });
+      user.password = null;
+      res.status(200).json(user)
     } else {
       res.status(400).json({
         error: "Invalid Password !!!",

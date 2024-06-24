@@ -20,27 +20,27 @@ const PopularCategories = () => {
         <h2>Browse By Popular Categories</h2>
       </div>
       <div className="categories-container">
-        <NavLink className="categories-boxes">
+        <NavLink to='/typeofproduct/phones' className="categories-boxes">
           <CiMobile1 className="icons" />
           <span>Phones</span>
         </NavLink>
-        <NavLink className="categories-boxes">
+        <NavLink to='/typeofproduct/laptops' className="categories-boxes">
           <PiLaptopLight className="icons" />
           <span>Laptops</span>
         </NavLink>
-        <NavLink className="categories-boxes">
+        <NavLink to='/typeofproduct/watches' className="categories-boxes">
           <IoWatchOutline className="icons" />
           <span>Watches</span>
         </NavLink>
-        <NavLink className="categories-boxes">
+        <NavLink to='/typeofproduct/camera' className="categories-boxes">
           <AiOutlineCamera className="icons" />
           <span>Camera</span>
         </NavLink>
-        <NavLink className="categories-boxes">
+        <NavLink to='/typeofproduct/clothes' className="categories-boxes">
           <IoShirtOutline className="icons" />
           <span>Clothes</span>
         </NavLink>
-        <NavLink className="categories-boxes">
+        <NavLink to='/typeofproduct/headphones' className="categories-boxes">
           <LiaHeadphonesSolid className="icons" />
           <span>Headphones</span>
         </NavLink>
