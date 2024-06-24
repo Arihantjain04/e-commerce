@@ -28,7 +28,7 @@ const Signup = () => {
     console.log(user);
 
     try {
-      const response = await fetch("http://localhost:8000/api/auth/signup", {
+      const response = await fetch("https://e-commerce-tkjz.onrender.com/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user),
