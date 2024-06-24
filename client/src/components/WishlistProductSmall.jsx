@@ -11,7 +11,7 @@ const WishlistProductSmall = (props) => {
     const removeWish = async () => {
         try {
           const response = await fetch(
-            `http://localhost:8000/api/product/removefromwishlist/${userid}/${props.pid}`,
+            `https://e-commerce-tkjz.onrender.com/api/product/removefromwishlist/${userid}/${props.pid}`,
             {
               method: "DELETE",
               headers: {
