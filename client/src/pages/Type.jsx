@@ -11,7 +11,7 @@ const Type = () => {
         const fetchSaleProducts = async () => {
           try {
             const response = await fetch(
-            `http://localhost:8000/api/product/getProductt/${type}`,
+            `https://e-commerce-tkjz.onrender.com/api/product/getProductt/${type}`,
               {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
