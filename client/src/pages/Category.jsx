@@ -37,7 +37,7 @@ const Category = () => {
         const fetchSaleProducts = async () => {
           try {
             const response = await fetch(
-            `http://localhost:8000/api/product/getProductc/${category}`,
+            `https://e-commerce-tkjz.onrender.com/api/product/getProductc/${category}`,
               {
                 method: "GET",
                 headers: { "Content-Type": "application/json" },
