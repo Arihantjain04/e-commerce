@@ -19,7 +19,7 @@ cloudinary.config({
 dotenv.config()
 
 const corsOptions = {
-    origin: 'http://localhost:5173', // Removed trailing slash
+    origin: 'https://the-curated-collections.netlify.app', // Removed trailing slash
     methods: 'GET, PUT, POST, DELETE, PATCH, HEAD',
     credentials: true,
     optionsSuccessStatus: 200 // Added to handle older browsers
