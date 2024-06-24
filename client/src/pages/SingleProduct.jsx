@@ -36,7 +36,7 @@ const SingleProduct = () => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/product/getProduct/${id}`
+          `https://e-commerce-tkjz.onrender.com/api/product/getProduct/${id}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch product");
@@ -54,7 +54,7 @@ const SingleProduct = () => {
   const addtowishlist = async () => {
     try {
       const response = await fetch(
-        `http://localhost:8000/api/product/addinwishlist/${userid}/${id}`,
+        `https://e-commerce-tkjz.onrender.com/api/product/addinwishlist/${userid}/${id}`,
         {
           method: "POST",
           headers: {
