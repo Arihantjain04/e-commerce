@@ -14,7 +14,7 @@ const DeleteCartMiddlePage = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:8000/api/product/removefromcart/${userid}/${pid}`,
+          `https://e-commerce-tkjz.onrender.com/api/product/removefromcart/${userid}/${pid}`,
           {
             method: "DELETE",
             headers: {
