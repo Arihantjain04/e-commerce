@@ -14,7 +14,7 @@ const SubCartComponents = ({ pid, quantity }) => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/product/getProduct/${pid}`
+          `https://e-commerce-tkjz.onrender.com/api/product/getProduct/${pid}`
         );
         if (!response.ok) {
           throw new Error("Failed to fetch product");
