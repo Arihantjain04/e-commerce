@@ -51,7 +51,7 @@ const CreateProduct = () => {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/product/createProduct",
+        "https://e-commerce-tkjz.onrender.com/api/product/createProduct",
         {
           method: "POST",
           body: formData,
