@@ -12,7 +12,7 @@ const WishList = () => {
     const fetchProducts = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/product/wishlist/${userid}`,
+          `https://e-commerce-tkjz.onrender.com/api/product/wishlist/${userid}`,
           {
             method: "GET",
             headers: { "Content-Type": "application/json" },
