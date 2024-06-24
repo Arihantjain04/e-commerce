@@ -14,7 +14,7 @@ const CartMiddlePage = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:8000/api/product/addincart/${userid}/${pid}`,
+          `https://e-commerce-tkjz.onrender.com/api/product/addincart/${userid}/${pid}`,
           {
             method: "POST",
             headers: {
