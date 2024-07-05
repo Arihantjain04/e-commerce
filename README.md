@@ -1,1 +1,3 @@
-# e-commerce
+* Built a robust full-stack e-commerce platform enabling seamless product navigation by type and category , featuring efficient cart list and wish list management , and comprehensive user authentication functionalities including secured storage in local storage as cookies and in a database. Each product page includes detailed images and descriptions.
+* Created an advanced admin panel to streamline management of inventory, enabling only administrators to efficiently create, update, and delete product listings , ensuring a dynamic, secured, organised, and up-to-date product catalog.
+* **Tech Stack: ** React js, Express js, Mongo DB, Bcrypt.js, Cloudinary, Multer, JsonWebToken.  [Project link](https://the-curated-collections.netlify.app/)
